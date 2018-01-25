@@ -1,6 +1,6 @@
 let expect = require('chai').expect;
-
-let pigLatin = require('../*.pigLatin.js');
+let {owner} = require('../../controllers/scores/index')
+let pigLatin = require(`../${owner}.pigLatin.js`);
 
 describe('pigLatin()', function () {
     'use strict';
