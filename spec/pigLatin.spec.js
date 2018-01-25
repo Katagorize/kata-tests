@@ -1,7 +1,6 @@
-let path = require('path');
 let expect = require('chai').expect;
 
-let { pigLatin } = require(path.join(__dirname, '..', './pigLatin.js'));
+let pigLatin = require('./pigLatin');
 
 describe('pigLatin()', function () {
     'use strict';
