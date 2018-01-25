@@ -1,6 +1,6 @@
 let expect = require('chai').expect;
 
-let pigLatin = require('./pigLatin');
+let pigLatin = require('../*.pigLatin.js');
 
 describe('pigLatin()', function () {
     'use strict';
