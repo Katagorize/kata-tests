@@ -4,11 +4,7 @@ let {pigLatin} = require(`../pigLatin.js`);
 describe('pigLatin()', function () {
     'use strict';
 
-    it('it will throw an error if there are no letters in the string.', function () {
-        expect(pigLatin('12345')).to.equal('You must enter a valid string.')
-    })
-
-    it('if a vowel is given, "way" will be appended.', function () {
+    it('appends "way" when passed a single word string beginning with a vowel', function () {
 		expect(pigLatin('a')).to.equal('away');
 		expect(pigLatin('algorithm')).to.equal('algorithmway');
     });
