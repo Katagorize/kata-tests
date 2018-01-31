@@ -1,4 +1,4 @@
-const {expect} = require('chai');
+let expect = require('chai').expect;
 const {calculateDivisors} = require('../calculateDivisors.js');
 
 describe('calculateDivisors()', function (){
