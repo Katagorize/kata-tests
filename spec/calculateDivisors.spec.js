@@ -1,4 +1,3 @@
-const path = require('path');
 const {expect} = require('chai');
 const {calculateDivisors} = require('../calculateDivisors.js');
 
