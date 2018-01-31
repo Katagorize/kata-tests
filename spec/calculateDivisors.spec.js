@@ -1,6 +1,6 @@
 const path = require('path');
 const {expect} = require('chai');
-const {calculateDivisors} = require(path.join(__dirname, '..', './calculateDivisors.js'));
+const {calculateDivisors} = require('../calculateDivisors');
 
 describe('calculateDivisors()', function (){
 
