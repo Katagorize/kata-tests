@@ -1,9 +1,9 @@
 let expect = require('chai').expect;
 const {calculateDivisors} = require(`../calculateDivisors.js`);
-'use strict';
 
 
 describe('calculateDivisors()', function (){
+'use strict';
 
     it('will return 0 if the number passed to the function is < 2', function () {
         expect(calculateDivisors(1)).to.equal(0);
