@@ -5,7 +5,7 @@ const {calculateDivisors} = require(`../calculateDivisors.js`);
 describe('calculateDivisors()', function (){
 'use strict';
 
-    it('Returns 0 if given a number less than 2', function () {
+    it('Returns 0 if given a number less than 3', function () {
         expect(calculateDivisors(1)).to.equal(0);
         expect(calculateDivisors(2)).to.equal(0);
         expect(calculateDivisors(3)).to.equal(0);
@@ -25,5 +25,15 @@ describe('calculateDivisors()', function (){
 
     it('Returns 33 if passed 12', function () {
         expect(calculateDivisors(12)).to.equal(33);
+    });
+    it('Returns 0 if passed PI', function () {
+        expect(calculateDivisors(Math.PI)).to.equal(0);
+    });
+    it('Returns 0 if passed an invalid input', () => {
+      expect(calculateDivisors('hello')).to.equal(0);
+      expect(calculateDivisors({})).to.equal(0);
+      expect(calculateDivisors([])).to.equal(0);
+      expect(calculateDivisors(-229)).to.equal(0);
+      expect(calculateDivisors(false)).to.equal(0);
     });
 })
