@@ -5,29 +5,25 @@ var {getTweetData} = require(path.join(__dirname, '..', './getTweetData.js'));
 
 describe('getTweetData()', function () {
   'use strict';
-
-  it('exists', function () {
-    expect(getTweetData).to.be.a('function');
-  });
-  it('takes a single tweet argument', function () {
+  it('Takes a single argument', function () {
     expect(getTweetData.length).to.equal(1);
   });
-  it('Returns a non populated object for an empty string', () => {
+  it('Returns a non populated tweet-data object when passed an empty string', () => {
     expect(getTweetData('')).to.eql({ tags: [], mentions: [], tagCount: 0, mentionCount: 0, length: 0 })
   })
-  it('Returns an object only populated with length property if no other requirements are met', () => {
+  it('Returns a tweet-object with length populated when passed a string with no tags or mentions', () => {
     expect(getTweetData("My awesome tweet")).to.eql({ tags: [], mentions: [], tagCount: 0, mentionCount: 0, length: 16 })
   })
-  it('Returns mentions in the mentioned array and increaes mentionCount by 1 if passed', () => {
+  it('Returns a tweet-data object updated with 1 mention when passed a string with 1 mention', () => {
       expect(getTweetData("My awesome tweet to @northcoders")).to.eql({ tags: [], mentions: ["@northcoders"], tagCount: 0, mentionCount: 1, length: 32 })
   })
-  it('Returns tags to the tags array and adds 1 to tagCount for each one found', () => {
+  it('Returns a tweet-data object updated with 1 tag when passed a string with 1 tag', () => {
     expect(getTweetData("My awesome tweet about #coding")).to.eql({ tags: ["#coding"], mentions: [], tagCount: 1, mentionCount: 0, length: 30 })
   })
-  it('Returns tags and mentions correctly when passed both', () => {
+  it('Returns a tweet-data object updated with tags and mentions correctly when passed a string with both', () => {
     expect(getTweetData("My awesome tweet about #coding to @northcoders")).to.eql({ tags: ["#coding"], mentions: ["@northcoders"], tagCount: 1, mentionCount: 1, length: 46 })
   })
-  it('Returns only unique hashtags and mentions', () => {
+  it('Only counts unique tags and mentions', () => {
     expect(getTweetData("I am #coding with @northcoders I love #coding and @northcoders")).to.eql({ tags: ["#coding"], mentions: ["@northcoders"], tagCount: 1, mentionCount: 1, length: 62 })
   })
   it('Returns all instances of unique hashtags and mentions', () => {

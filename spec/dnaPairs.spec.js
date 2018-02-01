@@ -6,19 +6,19 @@ var {dnaPairs} = require(path.join(__dirname, '..', './dnaPairs.js'));
 describe('dnaPairs()', function () {
   'use strict';
 
-  it('If passed an emtpy string returns an empty array', function() {
+  it('Returns an empty array when passed an empty string', function() {
     expect(dnaPairs('')).to.eql([]);
   });
-  it('If passed a string without any base characters (ATGC) returns an empty string', () => {
+  it('Returns an empty string when passed a string without any base characters (ATGC)', () => {
     expect(dnaPairs('ZXU')).to.eql([]);
   });
-  it('If passed only base characters correctly matches them with their pair', () => {
+  it('Returns matched pairs when passed only base characters', () => {
     expect(dnaPairs('G')).to.eql([['G','C']]);
     expect(dnaPairs('CT')).to.eql([['C','G'],['T','A']]);
     expect(dnaPairs('TGC')).to.eql([['T','A'],['G','C'],['C','G']]);
     expect(dnaPairs('ACTG')).to.eql([['A','T'],['C','G'],['T','A'],['G','C']]);
   });
-  it('If passed a mixture of base case, random letters and upper and lower characters matches them with their pair', () => {
+  it('Returns an array of matched pairs when passed a mixture of base characters and random letters of varying case', () => {
     expect(dnaPairs('s')).to.eql([]);
     expect(dnaPairs('S')).to.eql([]);
     expect(dnaPairs('Ss')).to.eql([]);
