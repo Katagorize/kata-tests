@@ -35,5 +35,6 @@ describe('calculateDivisors()', function (){
       expect(calculateDivisors([])).to.equal(0);
       expect(calculateDivisors(-229)).to.equal(0);
       expect(calculateDivisors(false)).to.equal(0);
+      expect(calculateDivisors(null)).to.equal(0);
     });
 })
