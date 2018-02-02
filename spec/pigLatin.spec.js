@@ -4,20 +4,20 @@ let {pigLatin} = require(`../pigLatin.js`);
 describe('pigLatin()', function () {
     'use strict';
 
-    it('appends "way" when passed a single word string beginning with a vowel', function () {
+    it('Appends "way" when passed a single word string beginning with a vowel', function () {
 		expect(pigLatin('a')).to.equal('away');
 		expect(pigLatin('algorithm')).to.equal('algorithmway');
     });
     
-    it('It will push the first consonant to the end of the string and append "ay"', function () {
+    it('Moves the first consonant to the end of the string and append "ay"', function () {
 		expect(pigLatin('sheffield')).to.equal('effieldshay');
     });
     
-    it('It will push consecutive consonant to the end of the string and append "ay"', function () {
+    it('Pushes consecutive consonants to the end of the string and append "ay"', function () {
 		expect(pigLatin('cat')).to.equal('atcay');
     });
     
-    it('the function will apply pigLatin to each word in a string.', function () {
+    it('Converts multiple word strings to pig latin', function () {
 		expect(pigLatin('keep on coding')).to.equal('eepkay onway odingcay');
 	});
 })

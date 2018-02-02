@@ -1,0 +1,19 @@
+{
+  "name": "kata-tests",
+  "version": "1.0.0",
+  "description": "tests for the kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Katagorize/kata-tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Katagorize/kata-tests/issues"
+  },
+  "homepage": "https://github.com/Katagorize/kata-tests#readme"
+}
